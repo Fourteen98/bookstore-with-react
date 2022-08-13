@@ -18,7 +18,7 @@ const Book = () => (
       <div className="chapter">
         <h4>Current Chapter</h4>
         <h5>Chapter 02</h5>
-        <button type="button">PROGRESS</button>
+        <button type="button">IN PROGRESS</button>
       </div>
     </div>
 

@@ -15,7 +15,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Books />} />
           <Route path="/category" element={<Category />} />
-          <Route path="/form" element={<Form />} />
         </Routes>
       </Router>
     </div>

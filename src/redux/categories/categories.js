@@ -1,4 +1,4 @@
-const CHECK_STATUS = 'CHECK_STATUS';
+const CHECK_STATUS = 'bookstore-with-react/categories/CHECK_STATUS';
 
 export const checkStatus = () => ({
   type: CHECK_STATUS,

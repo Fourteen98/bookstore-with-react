@@ -1,5 +1,5 @@
-const REMOVED_BOOK = 'REMOVE_BOOK';
-const ADD_BOOK = 'ADD_BOOK';
+const REMOVED_BOOK = 'bookstore-with-react/books/REMOVE_BOOK';
+const ADD_BOOK = 'bookstore-with-react/books/ADD_BOOK';
 
 export const removeBook = (bookId) => ({
   type: REMOVED_BOOK,

@@ -2,8 +2,10 @@ import Form from './Form';
 import Book from './Book';
 
 const Books = () => (
-  <div>
-    <Book />
+  <div className="main">
+    <div className="book--list">
+      <Book />
+    </div>
     <Form />
   </div>
 );

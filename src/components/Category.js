@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux/es/exports';
 import { CheckStatus } from '../redux/categories/categories';
 
 const Category = () => {
-  const response = useSelector((state) => state.categoriesReducer);
+  const response = useSelector((state) => state.categories);
   const dispatch = useDispatch();
   return (
     <div>

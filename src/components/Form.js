@@ -33,6 +33,7 @@ const Form = () => {
             // eslint-disable-next-line no-param-reassign
             event.target.previousElementSibling.value = '';
           } else {
+            // eslint-disable-next-line no-alert
             alert('Please fill in all fields');
           }
         }}

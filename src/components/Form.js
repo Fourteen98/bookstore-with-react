@@ -9,6 +9,10 @@ const Form = () => {
 
   const handleClick = (event) => {
     event.preventDefault();
+    // eslint-disable-next-line no-param-reassign
+    event.target.previousElementSibling.value = '';
+    // eslint-disable-next-line no-param-reassign
+    event.target.previousElementSibling.previousElementSibling.value = '';
     dispatch(addBook(books.length + 1, bookInfo.title, bookInfo.author));
   };
 

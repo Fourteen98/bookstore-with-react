@@ -1,6 +1,6 @@
 const CHECK_STATUS = 'bookstore-with-react/categories/CHECK_STATUS';
 
-export const checkStatus = () => ({
+export const CheckStatus = () => ({
   type: CHECK_STATUS,
   payload: 'under construction',
 });

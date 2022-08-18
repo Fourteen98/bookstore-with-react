@@ -13,7 +13,15 @@ export const addBook = (bookId, bookTitle, bookAuthor) => ({
   author: bookAuthor,
 });
 
-const booksReducer = (state = [], action) => {
+const initialState = [
+  { id: 1, title: 'Clean Code', author: 'Robert C. Martin' },
+  { id: 2, title: 'Refactoring', author: 'Martin Fowler' },
+  { id: 3, title: 'Patterns of Enterprise Application Architecture', author: 'Martin Fowler' },
+  { id: 4, title: 'Domain Driven Design', author: 'Eric Evans' },
+  { id: 5, title: 'Clean Architecture', author: 'Robert C. Martin' },
+];
+
+const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case REMOVED_BOOK:
       return state.filter((book) => book.id !== action.id);

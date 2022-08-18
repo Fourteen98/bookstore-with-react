@@ -1,17 +1,39 @@
-const Book = () => (
-  <>
-    <div className="card">
-      <div className="title">
+import { useSelector, useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
+
+const Book = () => {
+  const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+  return (books.map((book) => (
+    <div key={book.id} className="card">
+      <div className="book--info">
         <span>Action</span>
-        <h1>Kung Fu Panda: The Dragon Knight</h1>
-        <p>Unseen Content</p>
-        <ul>
-          <li>Comment</li>
-          <li>Remove</li>
-          <li>Edit</li>
+        <h1>{book.title}</h1>
+        <p>{book.author}</p>
+        <ul className="book--utils">
+          <button
+            type="button"
+          >
+            Comment
+          </button>
+          <button
+            type="button"
+            onClick={
+              (event) => {
+                event.preventDefault();
+                dispatch(removeBook(book.id));
+              }
+            }
+          >
+            Remove
+          </button>
+          <button
+            type="button"
+          >
+            Edit
+          </button>
         </ul>
       </div>
-
       <div className="progress">
         <h4>60%</h4>
       </div>
@@ -21,30 +43,7 @@ const Book = () => (
         <button type="button">IN PROGRESS</button>
       </div>
     </div>
-
-    <div className="card">
-      <div className="title">
-        <span>Action</span>
-        <h1>The Gray Man</h1>
-        <p>Unseen Content</p>
-        <ul>
-          <li>Comment</li>
-          <li>Remove</li>
-          <li>Edit</li>
-        </ul>
-      </div>
-
-      <div className="progress">
-        <h4>100%</h4>
-      </div>
-      <div className="chapter">
-        <h4>The Gray Man</h4>
-        <h5>Chapter 16</h5>
-        <button type="button">IN PROGRESS</button>
-      </div>
-    </div>
-
-  </>
-);
+  )));
+};
 
 export default Book;

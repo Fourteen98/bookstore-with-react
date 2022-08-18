@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #fff;
+  background-color: #d7e1ec;
   padding-left: 3rem;
   height: 80px;
 }
@@ -29,18 +29,40 @@ body {
   text-decoration: none;
 }
 
-.card {
+.main {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1.5rem;
-  background-color: #fff;
-  padding: 2rem;
-  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.card ul {
+.book--list {
+  height: 800px;
+  overflow: scroll;
+  overflow-y: auto;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  justify-content: space-between;
+  margin: 1.5rem;
+  background-color: #d7e1ec;
+  padding: 2rem;
+  align-items: center;
+  border-radius: 1.5rem;
+}
+
+.book--info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.book--utils {
   list-style: none;
+  display: flex;
+  gap: 10px;
 }
 
 button {
@@ -51,12 +73,18 @@ button {
   border-radius: 2px;
 }
 
-.form {
-  display: flex;
-  flex-direction: row;
-  margin: 2rem;
-  gap: 2rem;
-  justify-content: center;
+.book--utils button {
+  background-color: #b5cff5;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0.5rem;
+  color: black;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.book--utils button:hover {
+  background-color: #d7e1ec;
 }
 
 .author {
@@ -67,10 +95,38 @@ button {
   width: 200px;
 }
 
-.submit {
-  width: 100px;
-}
-
 input {
   padding: 0.4rem;
+}
+
+/* Forms */
+.form {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+  gap: 2rem;
+  justify-content: center;
+  background-color: #d7e1ec;
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+
+.form input {
+  padding: 1.4rem;
+  border-radius: 1.5rem;
+  border: none;
+}
+
+.submit {
+  background-color: #b5cff5;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0.5rem;
+  color: black;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #d7e1ec;
 }

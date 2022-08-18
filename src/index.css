@@ -87,14 +87,6 @@ button {
   background-color: #d7e1ec;
 }
 
-.form {
-  display: flex;
-  flex-direction: row;
-  margin: 2rem;
-  gap: 2rem;
-  justify-content: center;
-}
-
 .author {
   width: 550px;
 }
@@ -103,10 +95,38 @@ button {
   width: 200px;
 }
 
-.submit {
-  width: 100px;
-}
-
 input {
   padding: 0.4rem;
+}
+
+/* Forms */
+.form {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+  gap: 2rem;
+  justify-content: center;
+  background-color: #d7e1ec;
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+
+.form input {
+  padding: 1.4rem;
+  border-radius: 1.5rem;
+  border: none;
+}
+
+.submit {
+  background-color: #b5cff5;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0.5rem;
+  color: black;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #d7e1ec;
 }

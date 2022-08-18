@@ -51,18 +51,3 @@ const Form = () => {
 };
 
 export default Form;
-
-// (event) => {
-//   event.preventDefault();
-//   const title = event.target.previousElementSibling.value;
-//   const author = event.target.previousElementSibling.previousElementSibling.value;
-//   if (title && author) {
-//     dispatch(addBook(books.length + 1, title, author));
-//     // eslint-disable-next-line no-param-reassign
-//     event.target.previousElementSibling.previousElementSibling.value = '';
-//     // eslint-disable-next-line no-param-reassign
-//     event.target.previousElementSibling.value = '';
-//   } else {
-//     alert('Please fill in all fields');
-//   }
-// }}

@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import uuid from 'react-uuid';
 import { useState } from 'react';
 import { addBookThunk } from '../redux/books/books';
 
@@ -13,7 +12,12 @@ const Form = () => {
     event.target.previousElementSibling.value = '';
     // eslint-disable-next-line no-param-reassign
     event.target.previousElementSibling.previousElementSibling.value = '';
-    dispatch(addBook(uuid(), bookInfo.title, bookInfo.author));
+    if (bookInfo.title && bookInfo.author && bookInfo.category) {
+      dispatch(addBookThunk(bookInfo));
+    } else {
+      // eslint-disable-next-line no-alert
+      alert('Please fill all fields');
+    }
   };
 
   const handleChange = (event) => {
@@ -39,6 +43,14 @@ const Form = () => {
         className="author"
         onChange={handleChange}
       />
+      <select value={bookInfo.category} onChange={handleChange} name="category">
+        <option value="History">History</option>
+        <option value="Romance">Romance</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Science">Science</option>
+        <option value="Technology">Technology</option>
+      </select>
+
       <input
         type="submit"
         value="Submit"

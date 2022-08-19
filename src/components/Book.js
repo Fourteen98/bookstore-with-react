@@ -1,13 +1,19 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { useEffect } from 'react';
+import { getBooksThunk, removeBookThunk } from '../redux/books/books';
 
 const Book = () => {
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBooksThunk());
+  }, []);
+
   return (books.map((book) => (
     <div key={book.id} className="card">
       <div className="book--info">
-        <span>Action</span>
+        <span>{book.category}</span>
         <h1>{book.title}</h1>
         <p>{book.author}</p>
         <ul className="book--utils">
@@ -17,11 +23,12 @@ const Book = () => {
             Comment
           </button>
           <button
+            id={book.id}
             type="button"
             onClick={
               (event) => {
                 event.preventDefault();
-                dispatch(removeBook(book.id));
+                dispatch(removeBookThunk(event.target.id));
               }
             }
           >

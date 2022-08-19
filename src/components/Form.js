@@ -1,10 +1,10 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import uuid from 'react-uuid';
 import { useState } from 'react';
-import { addBook } from '../redux/books/books';
+import { addBookThunk } from '../redux/books/books';
 
 const Form = () => {
-  const [bookInfo, setBookInfo] = useState({ title: '', author: '' });
-  const books = useSelector((state) => state.books);
+  const [bookInfo, setBookInfo] = useState({ title: '', author: '', category: '' });
   const dispatch = useDispatch();
 
   const handleClick = (event) => {
@@ -13,7 +13,7 @@ const Form = () => {
     event.target.previousElementSibling.value = '';
     // eslint-disable-next-line no-param-reassign
     event.target.previousElementSibling.previousElementSibling.value = '';
-    dispatch(addBook(books.length + 1, bookInfo.title, bookInfo.author));
+    dispatch(addBook(uuid(), bookInfo.title, bookInfo.author));
   };
 
   const handleChange = (event) => {

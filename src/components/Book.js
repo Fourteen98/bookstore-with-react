@@ -1,5 +1,7 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import { getBooksThunk, removeBookThunk } from '../redux/books/books';
 
 const Book = () => {
@@ -9,7 +11,8 @@ const Book = () => {
   useEffect(() => {
     dispatch(getBooksThunk());
   }, []);
-
+  //  a function that generates random numbers from 0 to 100 and returns the number
+  // eslint-disable-next-line func-names
   return (books.map((book) => (
     <div key={book.id} className="card">
       <div className="book--info">
@@ -18,11 +21,13 @@ const Book = () => {
         <p>{book.author}</p>
         <ul className="book--utils">
           <button
+            className="book--utils--button"
             type="button"
           >
             Comment
           </button>
           <button
+            className="left--right book--utils--button"
             id={book.id}
             type="button"
             onClick={
@@ -35,6 +40,7 @@ const Book = () => {
             Remove
           </button>
           <button
+            className="book--utils--button book--utils--button"
             type="button"
           >
             Edit
@@ -42,12 +48,13 @@ const Book = () => {
         </ul>
       </div>
       <div className="progress">
-        <h4>60%</h4>
+        <div className="oval" />
+        <CircularProgressbar className="loader" value={Math.floor(Math.random() * 100)} text={`${Math.floor(Math.random() * 100)}%`} />
       </div>
       <div className="chapter">
         <h4>Current Chapter</h4>
         <h5>Chapter 02</h5>
-        <button type="button">IN PROGRESS</button>
+        <button className="chapter--button" type="button">IN PROGRESS</button>
       </div>
     </div>
   )));

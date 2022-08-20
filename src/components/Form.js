@@ -29,35 +29,37 @@ const Form = () => {
 
   return (
     <form className="form">
-      <input
-        type="text"
-        name="title"
-        placeholder="Author"
-        className="title"
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="author"
-        placeholder="Book"
-        className="author"
-        onChange={handleChange}
-      />
-      <select value={bookInfo.category} onChange={handleChange} name="category">
-        <option value="History">History</option>
-        <option value="Romance">Romance</option>
-        <option value="Mystery">Mystery</option>
-        <option value="Science">Science</option>
-        <option value="Technology">Technology</option>
-      </select>
+      <span>ADD NEW BOOK</span>
+      <div className="inner--form">
+        <input
+          type="text"
+          name="title"
+          placeholder="Book Title"
+          className="title"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="author"
+          placeholder="Author"
+          className="author"
+          onChange={handleChange}
+        />
+        <select value={bookInfo.category} onChange={handleChange} name="category" className="dropdown">
+          <option value="History">History</option>
+          <option value="Romance">Romance</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Science">Science</option>
+          <option value="Technology">Technology</option>
+        </select>
 
-      <input
-        type="submit"
-        value="Submit"
-        className="submit"
-        onClick={handleClick}
-      />
-
+        <input
+          type="submit"
+          value="Submit"
+          className="submit"
+          onClick={handleClick}
+        />
+      </div>
     </form>
   );
 };
